@@ -4,11 +4,11 @@ Tortoise ORM
 
 Tortoise ORM is an easy-to-use ``asyncio`` ORM *(Object Relational Mapper)* inspired by Django.
 
-Tortoise ORM was build with relations in mind and admiration for the excellent and popular Django ORM.
-It's engraved in it's design that you are working not with just tables, you work with relational data.
+Tortoise ORM was built with relations in mind and admiration for the excellent and popular Django ORM.
+It's engraved in its design that you are working not with just tables, you work with relational data.
 
 .. note::
-   Tortoise ORM is young project and breaking changes are to be expected.
+   Tortoise ORM is a young project and breaking changes are to be expected.
    We keep a :ref:`changelog` and it will have possible breakage clearly documented.
 
 Source & issue trackers are available at `<https://github.com/tortoise/tortoise-orm/>`_
@@ -21,10 +21,10 @@ Introduction
 Why was Tortoise ORM built?
 ---------------------------
 
-Python has many existing and mature ORMs, unfortunately they are designed with an opposing paradigm of how I/O gets processed.
-``asyncio`` is relatively new technology that has a different concurrency model, and the largest change is regarding how I/O is handled.
+Python has many existing and mature ORMs. Unfortunately, they are designed with an opposing paradigm of how I/O gets processed.
+``asyncio`` is a relatively new technology with a different concurrency model; the largest change is regarding how I/O is handled.
 
-However, Tortoise ORM is not first attempt of building ``asyncio`` ORM, there are many cases of developers attempting to map synchronous python ORMs to the async world, initial attempts did not have a clean API.
+However, Tortoise ORM is not the first attempt at building ``asyncio`` ORM. While there have been many cases of developers attempting to map synchronous Python ORMs to the async world, initial attempts did not have a clean API.
 
 Hence we started Tortoise ORM.
 
@@ -38,17 +38,17 @@ It also performs well when compared to other Python ORMs, trading places with Po
 How is an ORM useful?
 ---------------------
 
-When you build an application or service that uses a relational database, there is a point when you can't just get away with just using parametrized queries or even query builder, you just keep repeating yourself, writing slightly different code for each entity.
+When you build an application or service that uses a relational database, there is a point when you can't just get away with using parametrized queries or even query builder, you just keep repeating yourself, writing slightly different code for each entity.
 Code has no idea about relations between data, so you end up concatenating your data almost manually.
-It is also easy to make a mistake in how you access your database, making it easy for SQL-injection attacks to occur.
-Your data rules are also distributed, increasing the complexity of managing your data, and even worse, is applied inconsistently.
+It is also easy to make a mistake in accessing your database, making it easy for SQL injection attacks to occur.
+Your data rules are also distributed, increasing the complexity of managing your data, and even worse, are applied inconsistently.
 
-An ORM (Object Relational Mapper) is designed to address these issues, by centralizing your data model and data rules, ensuring that your data is managed safely (providing immunity to SQL-injection) and keeps track of relationships so you don't have to.
+An ORM (Object Relational Mapper) is designed to address these issues, by centralizing your data model and data rules, ensuring that your data is managed safely (providing immunity to SQL injection) and keeping track of relationships so you don't have to.
 
 Features
 ========
 
-Clean, familiar python interface
+Clean, familiar Python interface
 --------------------------------
 Define your models like so:
 
@@ -68,9 +68,9 @@ Initialise your models and database like so:
     from tortoise import Tortoise, run_async
 
     async def init():
-        # Here we create a SQLite DB using file "db.sqlite3"
-        #  also specify the app name of "models"
-        #  which contain models from "app.models"
+        # Here we create a SQLite DB using the file "db.sqlite3"
+        #  and also specify the app name of "models",
+        #  which contains models from "app.models"
         await Tortoise.init(
             db_url='sqlite://db.sqlite3',
             modules={'models': ['app.models']}
@@ -112,8 +112,8 @@ And more
 Tortoise ORM supports the following features:
 
 * Designed to be used in an existing project:
-    * Testing framework uses existing Python Unittest framework, just requires
-      that ``initializer()`` and ``finalizer()`` gets called to set up and tear
+    * Testing framework uses existing Python Unittest framework; just requires
+      that ``initializer()`` and ``finalizer()`` get called to set up and tear
       down the test databases. (See :ref:`unittest`)
     * ORM :ref:`init_app` configures entirely from provided parameters
 * Composable, Django-inspired :ref:`models`
